@@ -39,7 +39,7 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
           <label
             key={option.id}
             className='relative block p-4 rounded-xl border-2 border-gray-200 cursor-pointer
-                       hover:border-blue-500 hover:bg-blue-50 transition-all'
+                       hover:border-orange-500 hover:bg-orange-50 transition-all'
           >
             <input
               type='radio'
@@ -48,7 +48,7 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
               className='absolute h-0 w-0 opacity-0'
             />
             <div className='flex items-start gap-4'>
-              <div className='p-2 bg-blue-100 rounded-lg text-orange-600'>
+              <div className='p-2 bg-orange-100 rounded-lg text-orange-600'>
                 <option.icon className='w-6 h-6' />
               </div>
               <div className='flex-1'>
@@ -66,7 +66,7 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
       </div>
 
       {/* Kargo Notu */}
-      <div className='bg-blue-50 rounded-xl p-4'>
+      <div className='bg-orange-50 rounded-xl p-4'>
         <div className='flex items-center gap-3 text-orange-600'>
           <Truck className='w-5 h-5 flex-shrink-0' />
           <p className='text-sm'>

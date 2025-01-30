@@ -45,17 +45,17 @@ const SearchBar = () => {
           placeholder='Ürün ara...'
           className='w-full text-gray-700 pl-14 pr-12 py-4 bg-white border-2 border-gray-200 rounded-2xl shadow-sm
                     placeholder-gray-400
-                    focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200
+                    focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-200
                     transition-all duration-200
                     hover:border-gray-300'
         />
 
-        <Search className='absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-blue-500' />
+        <Search className='absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-focus-within:text-orange-500' />
 
         {/* Temizle/Yükleniyor Göstergesi */}
         <div className='absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2'>
           {isLoading ? (
-            <Loader2 className='w-5 h-5 text-blue-500 animate-spin' />
+            <Loader2 className='w-5 h-5 text-orange-500 animate-spin' />
           ) : search ? (
             <button
               onClick={clearSearch}

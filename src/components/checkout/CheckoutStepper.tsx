@@ -50,7 +50,7 @@ export default function CheckoutStepper({ currentStep, onStepChange }: StepperPr
                   {/* Bağlantı çizgisi */}
                   <div
                     className={`absolute left-0 right-0 top-[15px] h-[2px] -translate-y-1/2 transition-colors duration-300 ease-in-out
-                      ${isCompleted ? 'bg-blue-600' : 'bg-gray-200'}`}
+                      ${isCompleted ? 'bg-orange-600' : 'bg-gray-200'}`}
                     style={{ width: 'calc(100% - 20px)', left: '10px' }}
                   />
 
@@ -62,12 +62,12 @@ export default function CheckoutStepper({ currentStep, onStepChange }: StepperPr
                       transition-all duration-300 ease-in-out z-10 bg-white
                       ${
                         isCompleted
-                          ? 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700'
+                          ? 'border-orange-600 bg-orange-600 text-white hover:bg-orange-700'
                           : isCurrent
-                            ? 'border-blue-600 text-blue-600'
+                            ? 'border-orange-600 text-orange-600'
                             : 'border-gray-300 text-gray-500'
                       }
-                      ${!isCurrent ? 'cursor-pointer hover:border-blue-400' : 'cursor-default'}
+                      ${!isCurrent ? 'cursor-pointer hover:border-orange-400' : 'cursor-default'}
                     `}
                   >
                     <span className='flex items-center justify-center'>
@@ -83,7 +83,7 @@ export default function CheckoutStepper({ currentStep, onStepChange }: StepperPr
                   <div className='mt-4 space-y-1 text-center'>
                     <span
                       className={`block text-sm font-medium transition-colors duration-300
-                        ${isCurrent ? 'text-blue-600' : 'text-gray-500'}`}
+                        ${isCurrent ? 'text-orange-600' : 'text-gray-500'}`}
                     >
                       {step.title}
                     </span>

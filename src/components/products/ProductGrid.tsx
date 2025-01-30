@@ -86,7 +86,7 @@ const ProductGrid = () => {
   if (isLoading && products.length === 0) {
     return (
       <div className='h-96 flex items-center justify-center'>
-        <Loader2 className='w-8 h-8 animate-spin text-blue-500' />
+        <Loader2 className='w-8 h-8 animate-spin text-orange-500' />
       </div>
     )
   }
@@ -120,7 +120,7 @@ const ProductGrid = () => {
       {/* Daha Fazla Yükleme Butonu */}
       {products.length < total && (
         <div ref={ref} className='flex justify-center mt-8'>
-          {isLoading && <Loader2 className='w-8 h-8 animate-spin text-blue-500' />}
+          {isLoading && <Loader2 className='w-8 h-8 animate-spin text-orange-500' />}
         </div>
       )}
     </div>

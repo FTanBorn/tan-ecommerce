@@ -20,7 +20,7 @@ const CartSummary = memo(function CartSummary({ totalItems, onClick }: CartSumma
     >
       <ShoppingCart className='h-6 w-6 text-gray-600' />
       {totalItems > 0 && (
-        <span className='absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-blue-600 rounded-full'>
+        <span className='absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-medium text-white bg-orange-600 rounded-full'>
           {totalItems}
         </span>
       )}

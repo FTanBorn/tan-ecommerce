@@ -30,7 +30,7 @@ export default function SuccessPage() {
           {/* Sipariş Bilgisi */}
           <div className='mt-6 sm:mt-8'>
             <div
-              className='bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4
+              className='bg-gradient-to-r from-orange-50 to-indigo-50 rounded-xl p-4
                           transform transition-all hover:scale-[1.02]'
             >
               <div className='flex items-center gap-3'>
@@ -86,7 +86,7 @@ export default function SuccessPage() {
               Sorunuz mu var?{' '}
               <Link
                 href='/'
-                className='text-blue-600 hover:text-blue-700 font-medium
+                className='text-orange-600 hover:text-orange-700 font-medium
                          inline-flex items-center hover:underline'
               >
                 Müşteri hizmetleriyle iletişime geçin

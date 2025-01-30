@@ -14,7 +14,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='text'
             placeholder='Furkan'
-            className='w-full px-4 py-2.5 rounded-xl  text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl  text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
         <div className='space-y-1'>
@@ -22,7 +22,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='text'
             placeholder='Tandoğan'
-            className='w-full px-4 py-2.5 rounded-xl  text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl  text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
       </div>
@@ -34,7 +34,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='email'
             placeholder='furkantandogan@example.com'
-            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
         <div className='space-y-1'>
@@ -42,7 +42,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='tel'
             placeholder='5XX XXX XX XX'
-            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
       </div>
@@ -53,7 +53,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
         <textarea
           rows={3}
           placeholder='Teslimat adresi...'
-          className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+          className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
         />
       </div>
 
@@ -64,7 +64,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='text'
             placeholder='İstanbul'
-            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
         <div className='space-y-1'>
@@ -72,7 +72,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='text'
             placeholder='Kadıköy'
-            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
         <div className='space-y-1'>
@@ -80,7 +80,7 @@ export default function AddressForm({ onNext }: AddressFormProps) {
           <input
             type='text'
             placeholder='34700'
-            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all'
+            className='w-full px-4 py-2.5 rounded-xl text-black border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition-all'
           />
         </div>
       </div>

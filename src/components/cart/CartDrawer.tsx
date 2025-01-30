@@ -114,7 +114,7 @@ export default function CartDrawer() {
                             </p>
                             <button
                               onClick={() => setIsOpen(false)}
-                              className='mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-orange-600 bg-blue-50 hover:bg-blue-100'
+                              className='mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-orange-600 bg-orange-50 hover:bg-orange-100'
                             >
                               Alışverişe Başla
                             </button>
@@ -157,7 +157,7 @@ export default function CartDrawer() {
                               <span className='text-gray-500'>Kargo</span>
                               <span className='text-green-600 font-medium'>Ücretsiz</span>
                             </div>
-                            <div className='flex justify-between text-lg font-bold border-t border-gray-100 pt-2'>
+                            <div className='flex justify-between text-black text-lg font-bold border-t border-gray-100 pt-2'>
                               <span>Toplam</span>
                               <span>
                                 {new Intl.NumberFormat('tr-TR', {
@@ -170,7 +170,7 @@ export default function CartDrawer() {
 
                           <Link
                             href='/checkout'
-                            className='w-full flex items-center justify-center gap-2 rounded-lg border border-transparent bg-orange-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 transition-colors'
+                            className='w-full flex items-center justify-center gap-2 rounded-lg border border-transparent bg-orange-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-orange-700 transition-colors'
                             onClick={() => setIsOpen(false)} // Sepet drawer'ı kapansın
                           >
                             Ödemeye Geç

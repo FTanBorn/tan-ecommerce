@@ -73,7 +73,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }: CartItemProps) => {
             >
               <Minus className='h-4 w-4' />
             </button>
-            <span className='w-10 text-center text-sm font-medium'>{quantity}</span>
+            <span className='w-10 text-center text-black text-sm font-medium'>{quantity}</span>
             <button
               onClick={() => onUpdateQuantity(product.id, quantity + 1)}
               disabled={currentStock === 0}

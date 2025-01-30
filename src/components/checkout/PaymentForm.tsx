@@ -12,7 +12,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
   return (
     <div>
       {/* Güvenlik Bildirimi */}
-      <div className='mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4'>
+      <div className='mb-8 bg-gradient-to-r from-orange-50 to-indigo-50 rounded-2xl p-4'>
         <div className='flex items-center gap-3'>
           <div className='p-2 bg-white rounded-lg'>
             <Lock className='w-5 h-5 text-orange-600' />
@@ -37,7 +37,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
             <input
               type='text'
               placeholder='Furkan Tandoğan'
-              className='w-full px-4 py-3 rounded-xl  text-black border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-colors'
+              className='w-full px-4 py-3 rounded-xl  text-black border-gray-200 focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition-colors'
             />
           </div>
 
@@ -48,7 +48,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
               <input
                 type='text'
                 placeholder='4242 4242 4242 4242'
-                className='w-full pl-12 pr-4 py-3 rounded-xl text-black border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-colors'
+                className='w-full pl-12 pr-4 py-3 rounded-xl text-black border-gray-200 focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition-colors'
               />
               <CreditCard className='absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5' />
             </div>
@@ -62,7 +62,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
             <input
               type='text'
               placeholder='MM/YY'
-              className='w-full px-4 py-3 rounded-xl text-black border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-colors'
+              className='w-full px-4 py-3 rounded-xl text-black border-gray-200 focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition-colors'
             />
           </div>
 
@@ -73,7 +73,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
               type='text'
               placeholder='123'
               maxLength={3}
-              className='w-full px-4 py-3 rounded-xl text-black border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-colors'
+              className='w-full px-4 py-3 rounded-xl text-black border-gray-200 focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition-colors'
             />
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
         {/* Taksit Seçenekleri */}
         <div>
           <label className='block text-sm font-medium text-gray-700 mb-1'>Taksit Seçenekleri</label>
-          <select className='w-full px-4 py-3 rounded-xl text-black border-gray-200 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50 transition-colors'>
+          <select className='w-full px-4 py-3 rounded-xl text-black border-gray-200 focus:border-orange-500 focus:ring focus:ring-orange-200 focus:ring-opacity-50 transition-colors'>
             <option value='1'>Tek Çekim</option>
             <option value='3'>3 Taksit</option>
             <option value='6'>6 Taksit</option>
@@ -94,7 +94,7 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
           <input
             id='saveCard'
             type='checkbox'
-            className='h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded'
+            className='h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded'
           />
           <label htmlFor='saveCard' className='ml-2 block text-sm text-gray-700'>
             Bu kartı sonraki alışverişlerim için kaydet

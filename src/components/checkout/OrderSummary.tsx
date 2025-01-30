@@ -88,7 +88,7 @@ export default function OrderSummary({ items, totalPrice, shippingPrice = 0 }: O
 
       {/* Kargo Bilgisi */}
       <div className='mt-6'>
-        <div className='rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-4'>
+        <div className='rounded-xl bg-gradient-to-r from-orange-50 to-indigo-50 p-4'>
           <div className='flex items-center gap-3'>
             <Truck className='w-5 h-5 text-orange-600' />
             <div>

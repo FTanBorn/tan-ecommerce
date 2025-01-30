@@ -89,8 +89,8 @@ export default function AddressForm({ onNext }: AddressFormProps) {
       <div className='flex justify-end pt-4'>
         <button
           onClick={onNext}
-          className='px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700
-                       focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+          className='px-8 py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700
+                       focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
                        transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]'
         >
           Devam Et

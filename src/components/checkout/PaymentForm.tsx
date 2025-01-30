@@ -15,11 +15,11 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
       <div className='mb-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4'>
         <div className='flex items-center gap-3'>
           <div className='p-2 bg-white rounded-lg'>
-            <Lock className='w-5 h-5 text-blue-600' />
+            <Lock className='w-5 h-5 text-orange-600' />
           </div>
           <div>
-            <p className='text-sm font-medium text-blue-900'>Güvenli Ödeme</p>
-            <p className='text-sm text-blue-700 mt-0.5'>
+            <p className='text-sm font-medium text-orange-900'>Güvenli Ödeme</p>
+            <p className='text-sm text-orange-700 mt-0.5'>
               256-bit SSL şifrelemesi ile güvenli ödeme
             </p>
           </div>
@@ -118,8 +118,8 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
           type='button'
           onClick={onComplete}
           disabled={isLoading}
-          className='px-8 py-3 bg-blue-600 text-white font-medium rounded-xl
-                   hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500
+          className='px-8 py-3 bg-orange-600 text-white font-medium rounded-xl
+                   hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500
                    focus:ring-offset-2 transition-all duration-200
                    hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50
                    disabled:hover:scale-100 flex items-center gap-2'

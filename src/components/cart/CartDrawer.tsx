@@ -114,7 +114,7 @@ export default function CartDrawer() {
                             </p>
                             <button
                               onClick={() => setIsOpen(false)}
-                              className='mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-blue-600 bg-blue-50 hover:bg-blue-100'
+                              className='mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-orange-600 bg-blue-50 hover:bg-blue-100'
                             >
                               Alışverişe Başla
                             </button>
@@ -170,7 +170,7 @@ export default function CartDrawer() {
 
                           <Link
                             href='/checkout'
-                            className='w-full flex items-center justify-center gap-2 rounded-lg border border-transparent bg-blue-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 transition-colors'
+                            className='w-full flex items-center justify-center gap-2 rounded-lg border border-transparent bg-orange-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 transition-colors'
                             onClick={() => setIsOpen(false)} // Sepet drawer'ı kapansın
                           >
                             Ödemeye Geç

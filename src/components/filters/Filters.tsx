@@ -37,7 +37,9 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
   const currentCategory = searchParams.get('category') || ''
   const inStock = searchParams.get('inStock') === 'true'
 
-  const hasActiveFilters = Boolean(currentSort || currentCategory || inStock || minRating || minPrice || maxPrice)
+  const hasActiveFilters = Boolean(
+    currentSort || currentCategory || inStock || minRating || minPrice || maxPrice
+  )
 
   useEffect(() => {
     setIsClient(true)
@@ -74,7 +76,9 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-lg p-4 lg:p-6 space-y-6 border border-gray-100 ${className}`}>
+    <div
+      className={`bg-white rounded-xl shadow-lg p-4 lg:p-6 space-y-6 border border-gray-100 ${className}`}
+    >
       {/* Başlık ve Temizleme */}
       <div className='flex items-center justify-between'>
         <h2 className='text-lg font-semibold text-gray-900 flex items-center gap-2'>
@@ -139,7 +143,9 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           <button
             onClick={() => updateUrl({ category: '' })}
             className={`w-full p-2 text-sm rounded-lg transition-colors ${
-              !currentCategory ? 'bg-orange-500 text-white font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              !currentCategory
+                ? 'bg-orange-500 text-white font-medium'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             Tüm Kategoriler
@@ -227,7 +233,9 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
                     : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
-                <Star className={`w-4 h-4 ${Number(minRating) === rating ? 'fill-white' : 'fill-gray-300'}`} />
+                <Star
+                  className={`w-4 h-4 ${Number(minRating) === rating ? 'fill-white' : 'fill-gray-300'}`}
+                />
                 {rating}+
               </button>
             ))}

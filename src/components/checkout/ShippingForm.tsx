@@ -48,7 +48,7 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
               className='absolute h-0 w-0 opacity-0'
             />
             <div className='flex items-start gap-4'>
-              <div className='p-2 bg-blue-100 rounded-lg text-blue-600'>
+              <div className='p-2 bg-blue-100 rounded-lg text-orange-600'>
                 <option.icon className='w-6 h-6' />
               </div>
               <div className='flex-1'>
@@ -67,7 +67,7 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
 
       {/* Kargo Notu */}
       <div className='bg-blue-50 rounded-xl p-4'>
-        <div className='flex items-center gap-3 text-blue-600'>
+        <div className='flex items-center gap-3 text-orange-600'>
           <Truck className='w-5 h-5 flex-shrink-0' />
           <p className='text-sm'>
             <span className='font-medium'>150 TL</span> ve üzeri siparişlerde kargo bedava!
@@ -87,8 +87,8 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
         </button>
         <button
           onClick={onNext}
-          className='px-8 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700
-                     focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+          className='px-8 py-3 bg-orange-600 text-white font-medium rounded-xl hover:bg-orange-700
+                     focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
                      transform transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]'
         >
           Devam Et

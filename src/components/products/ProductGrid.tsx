@@ -104,7 +104,9 @@ const ProductGrid = () => {
     <div>
       {/* Toplam Ürün Sayısı Başlığı */}
       <div className='flex justify-between items-center mb-6'>
-        <h2 className='text-xl font-semibold text-gray-800'>{search ? `"${search}" için sonuçlar` : 'Tüm Ürünler'}</h2>
+        <h2 className='text-xl font-semibold text-gray-800'>
+          {search ? `"${search}" için sonuçlar` : 'Tüm Ürünler'}
+        </h2>
         <span className='text-sm text-gray-500'>{total} ürün bulundu</span>
       </div>
 

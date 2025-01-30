@@ -90,10 +90,10 @@ export default function OrderSummary({ items, totalPrice, shippingPrice = 0 }: O
       <div className='mt-6'>
         <div className='rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-4'>
           <div className='flex items-center gap-3'>
-            <Truck className='w-5 h-5 text-blue-600' />
+            <Truck className='w-5 h-5 text-orange-600' />
             <div>
-              <p className='text-sm font-medium text-blue-900'>Ücretsiz Kargo</p>
-              <p className='text-sm text-blue-700 mt-0.5'>Tahmini Teslimat: 3-5 iş günü</p>
+              <p className='text-sm font-medium text-orange-900'>Ücretsiz Kargo</p>
+              <p className='text-sm text-orange-700 mt-0.5'>Tahmini Teslimat: 3-5 iş günü</p>
             </div>
           </div>
         </div>

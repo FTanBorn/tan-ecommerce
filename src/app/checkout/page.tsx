@@ -59,8 +59,8 @@ export default function CheckoutPage() {
           <p className='text-gray-500'>Ödeme yapabilmek için sepetinize ürün eklemelisiniz.</p>
           <Link
             href='/'
-            className='inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-xl
-                     hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500
+            className='inline-block px-6 py-3 bg-orange-600 text-white font-medium rounded-xl
+                     hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500
                      focus:ring-offset-2 transition-all duration-200'
           >
             Alışverişe Başla

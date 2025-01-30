@@ -35,11 +35,11 @@ export default function SuccessPage() {
             >
               <div className='flex items-center gap-3'>
                 <div className='flex-shrink-0'>
-                  <Package className='w-5 h-5 text-blue-600' />
+                  <Package className='w-5 h-5 text-orange-600' />
                 </div>
                 <div className='min-w-0 flex-1'>
-                  <p className='text-sm font-medium text-blue-900 truncate'>Tahmini Teslimat</p>
-                  <p className='text-sm text-blue-700 mt-0.5'>27 Ocak 2025, Pazartesi</p>
+                  <p className='text-sm font-medium text-orange-900 truncate'>Tahmini Teslimat</p>
+                  <p className='text-sm text-orange-700 mt-0.5'>27 Ocak 2025, Pazartesi</p>
                 </div>
               </div>
             </div>
@@ -51,8 +51,8 @@ export default function SuccessPage() {
             <Link
               href='/'
               className='w-full flex items-center justify-center gap-2 px-4 sm:px-6 py-3
-                       bg-blue-600 text-white font-medium rounded-xl text-sm sm:text-base
-                       hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500
+                       bg-orange-600 text-white font-medium rounded-xl text-sm sm:text-base
+                       hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500
                        focus:ring-offset-2 transition-all active:scale-[0.98]'
             >
               <FileText className='w-4 h-4 sm:w-5 sm:h-5' />

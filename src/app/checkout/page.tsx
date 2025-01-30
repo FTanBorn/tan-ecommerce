@@ -75,9 +75,20 @@ export default function CheckoutPage() {
       case 'address':
         return <AddressForm onNext={() => handleStepChange('shipping')} />
       case 'shipping':
-        return <ShippingForm onNext={() => handleStepChange('payment')} onBack={() => handleStepChange('address')} />
+        return (
+          <ShippingForm
+            onNext={() => handleStepChange('payment')}
+            onBack={() => handleStepChange('address')}
+          />
+        )
       case 'payment':
-        return <PaymentForm onComplete={handleComplete} onBack={() => handleStepChange('shipping')} isLoading={false} />
+        return (
+          <PaymentForm
+            onComplete={handleComplete}
+            onBack={() => handleStepChange('shipping')}
+            isLoading={false}
+          />
+        )
       default:
         return null
     }

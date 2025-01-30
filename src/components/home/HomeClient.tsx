@@ -58,7 +58,9 @@ function HomeClient({ categories }: { categories: Category[] }) {
                       <Dialog.Panel className='pointer-events-auto w-screen max-w-md'>
                         <div className='flex h-full flex-col overflow-y-scroll bg-white shadow-xl'>
                           <div className='flex items-center justify-between px-4 py-6 border-b'>
-                            <Dialog.Title className='text-lg font-semibold text-gray-900'>Filtreler</Dialog.Title>
+                            <Dialog.Title className='text-lg font-semibold text-gray-900'>
+                              Filtreler
+                            </Dialog.Title>
                             <button
                               type='button'
                               className='text-gray-400 hover:text-gray-500'

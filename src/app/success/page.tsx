@@ -75,7 +75,9 @@ export default function SuccessPage() {
 
           {/* Mail Bilgisi */}
           <div className='mt-6 sm:mt-8 text-center'>
-            <p className='text-xs sm:text-sm text-gray-500'>Sipariş detaylarınız mail adresinize gönderildi.</p>
+            <p className='text-xs sm:text-sm text-gray-500'>
+              Sipariş detaylarınız mail adresinize gönderildi.
+            </p>
           </div>
 
           {/* Destek ile İletişime Geçin */}

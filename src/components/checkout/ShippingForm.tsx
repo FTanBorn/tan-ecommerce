@@ -41,7 +41,12 @@ export default function ShippingForm({ onNext, onBack }: ShippingFormProps) {
             className='relative block p-4 rounded-xl border-2 border-gray-200 cursor-pointer
                        hover:border-blue-500 hover:bg-blue-50 transition-all'
           >
-            <input type='radio' name='shipping' value={option.id} className='absolute h-0 w-0 opacity-0' />
+            <input
+              type='radio'
+              name='shipping'
+              value={option.id}
+              className='absolute h-0 w-0 opacity-0'
+            />
             <div className='flex items-start gap-4'>
               <div className='p-2 bg-blue-100 rounded-lg text-blue-600'>
                 <option.icon className='w-6 h-6' />

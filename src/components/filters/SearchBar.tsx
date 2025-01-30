@@ -57,7 +57,10 @@ const SearchBar = () => {
           {isLoading ? (
             <Loader2 className='w-5 h-5 text-blue-500 animate-spin' />
           ) : search ? (
-            <button onClick={clearSearch} className='p-1 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors'>
+            <button
+              onClick={clearSearch}
+              className='p-1 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors'
+            >
               <X className='w-5 h-5 text-gray-500 hover:text-gray-700' />
             </button>
           ) : null}

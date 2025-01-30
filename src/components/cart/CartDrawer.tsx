@@ -77,8 +77,12 @@ export default function CartDrawer() {
                       {/* Header */}
                       <div className='flex items-center justify-between px-4 py-6 sm:px-6 border-b border-gray-100'>
                         <div className='flex items-center gap-3'>
-                          <Dialog.Title className='text-lg font-medium text-gray-900'>Sepetim</Dialog.Title>
-                          <div className='flex items-center text-sm text-gray-500'>({totalItems} ürün)</div>
+                          <Dialog.Title className='text-lg font-medium text-gray-900'>
+                            Sepetim
+                          </Dialog.Title>
+                          <div className='flex items-center text-sm text-gray-500'>
+                            ({totalItems} ürün)
+                          </div>
                         </div>
                         <div className='flex items-center gap-4'>
                           {items.length > 0 && (

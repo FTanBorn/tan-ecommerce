@@ -19,7 +19,9 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
           </div>
           <div>
             <p className='text-sm font-medium text-blue-900'>Güvenli Ödeme</p>
-            <p className='text-sm text-blue-700 mt-0.5'>256-bit SSL şifrelemesi ile güvenli ödeme</p>
+            <p className='text-sm text-blue-700 mt-0.5'>
+              256-bit SSL şifrelemesi ile güvenli ödeme
+            </p>
           </div>
         </div>
       </div>
@@ -29,7 +31,9 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
         <div className='grid grid-cols-2 gap-6'>
           {/* Kart Üzerindeki İsim */}
           <div className='col-span-2'>
-            <label className='block text-sm font-medium text-gray-700 mb-1'>Kart Üzerindeki İsim</label>
+            <label className='block text-sm font-medium text-gray-700 mb-1'>
+              Kart Üzerindeki İsim
+            </label>
             <input
               type='text'
               placeholder='Furkan Tandoğan'
@@ -52,7 +56,9 @@ export default function PaymentForm({ onBack, onComplete, isLoading }: PaymentFo
 
           {/* Son Kullanma Tarihi */}
           <div>
-            <label className='block text-sm font-medium text-gray-700 mb-1'>Son Kullanma Tarihi</label>
+            <label className='block text-sm font-medium text-gray-700 mb-1'>
+              Son Kullanma Tarihi
+            </label>
             <input
               type='text'
               placeholder='MM/YY'

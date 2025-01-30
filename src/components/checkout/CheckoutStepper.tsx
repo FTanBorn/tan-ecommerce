@@ -87,7 +87,9 @@ export default function CheckoutStepper({ currentStep, onStepChange }: StepperPr
                     >
                       {step.title}
                     </span>
-                    <span className='hidden sm:block text-xs text-gray-400'>{step.description}</span>
+                    <span className='hidden sm:block text-xs text-gray-400'>
+                      {step.description}
+                    </span>
                   </div>
                 </li>
               )

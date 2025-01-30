@@ -59,7 +59,10 @@ function cartReducer(state: CartState, action: CartAction): CartState {
           ...state,
           items: updatedItems,
           totalItems: updatedItems.reduce((total, item) => total + item.quantity, 0),
-          totalPrice: updatedItems.reduce((total, item) => total + item.product.price * item.quantity, 0),
+          totalPrice: updatedItems.reduce(
+            (total, item) => total + item.product.price * item.quantity,
+            0
+          ),
           productStocks: {
             ...state.productStocks,
             [action.payload.id]: currentStock - 1
@@ -84,7 +87,10 @@ function cartReducer(state: CartState, action: CartAction): CartState {
         ...state,
         items: updatedItems,
         totalItems: updatedItems.reduce((total, item) => total + item.quantity, 0),
-        totalPrice: updatedItems.reduce((total, item) => total + item.product.price * item.quantity, 0),
+        totalPrice: updatedItems.reduce(
+          (total, item) => total + item.product.price * item.quantity,
+          0
+        ),
         productStocks: {
           ...state.productStocks,
           [action.payload.id]: currentStock - 1
@@ -106,7 +112,10 @@ function cartReducer(state: CartState, action: CartAction): CartState {
         ...state,
         items: updatedItems,
         totalItems: updatedItems.reduce((total, item) => total + item.quantity, 0),
-        totalPrice: updatedItems.reduce((total, item) => total + item.product.price * item.quantity, 0),
+        totalPrice: updatedItems.reduce(
+          (total, item) => total + item.product.price * item.quantity,
+          0
+        ),
         productStocks: {
           ...state.productStocks,
           [action.payload]: (state.productStocks[action.payload] || 0) + item.quantity
@@ -136,7 +145,9 @@ function cartReducer(state: CartState, action: CartAction): CartState {
       } else {
         // Sepetteki ürünleri güncelle, ilgili ürünün miktarını güncelle
         updatedItems = state.items.map(item =>
-          item.product.id === action.payload.productId ? { ...item, quantity: action.payload.quantity } : item
+          item.product.id === action.payload.productId
+            ? { ...item, quantity: action.payload.quantity }
+            : item
         )
       }
 
@@ -145,7 +156,10 @@ function cartReducer(state: CartState, action: CartAction): CartState {
         ...state,
         items: updatedItems,
         totalItems: updatedItems.reduce((total, item) => total + item.quantity, 0),
-        totalPrice: updatedItems.reduce((total, item) => total + item.product.price * item.quantity, 0),
+        totalPrice: updatedItems.reduce(
+          (total, item) => total + item.product.price * item.quantity,
+          0
+        ),
         productStocks: {
           ...state.productStocks,
           [action.payload.productId]: currentStock - diff

@@ -32,7 +32,9 @@ export default function OrderSummary({ items, totalPrice, shippingPrice = 0 }: O
               />
             </div>
             <div className='flex-1 min-w-0'>
-              <h4 className='text-sm font-medium text-gray-900 line-clamp-2'>{item.product.title}</h4>
+              <h4 className='text-sm font-medium text-gray-900 line-clamp-2'>
+                {item.product.title}
+              </h4>
               <div className='mt-1 flex items-center gap-2 text-sm text-gray-500'>
                 <span>{item.quantity} adet</span>
                 <span>×</span>
@@ -68,7 +70,9 @@ export default function OrderSummary({ items, totalPrice, shippingPrice = 0 }: O
 
         <div className='flex justify-between text-sm'>
           <span className='text-gray-500'>Kargo</span>
-          <span className='font-medium text-green-600'>{shippingPrice === 0 ? 'Ücretsiz' : `${shippingPrice} TL`}</span>
+          <span className='font-medium text-green-600'>
+            {shippingPrice === 0 ? 'Ücretsiz' : `${shippingPrice} TL`}
+          </span>
         </div>
 
         <div className='flex text-black justify-between text-base font-semibold pt-4 border-t'>

@@ -68,7 +68,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 <Star
                   key={i}
                   className={`w-4 h-4 ${
-                    i < Math.floor(rating) ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'
+                    i < Math.floor(rating)
+                      ? 'fill-yellow-400 text-yellow-400'
+                      : 'fill-gray-200 text-gray-200'
                   }`}
                 />
               ))}
@@ -91,7 +93,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     }).format(price * (1 - discountPercentage / 100))}
                   </span>
                 </div>
-                <span className='text-xs text-green-600 mt-1'>%{Math.round(discountPercentage)} indirim</span>
+                <span className='text-xs text-green-600 mt-1'>
+                  %{Math.round(discountPercentage)} indirim
+                </span>
               </>
             ) : (
               <span className='text-xl font-bold text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis'>
@@ -113,7 +117,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 transition-all flex-shrink-0`}
             >
               <ShoppingCart className='w-4 h-4' />
-              <span className='text-sm font-medium text-current'>{stock === 0 ? 'Stokta Yok' : 'Sepete Ekle'}</span>
+              <span className='text-sm font-medium text-current'>
+                {stock === 0 ? 'Stokta Yok' : 'Sepete Ekle'}
+              </span>
             </button>
           ) : (
             <div className='flex items-center gap-1 bg-blue-600 rounded-full p-1 w-full sm:w-auto justify-between flex-shrink-0'>

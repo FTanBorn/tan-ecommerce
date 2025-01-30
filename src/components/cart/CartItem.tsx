@@ -24,7 +24,12 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }: CartItemProps) => {
     <div className='flex gap-4 py-4 border-b border-gray-100 last:border-none'>
       {/* Ürün Resmi */}
       <div className='relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg bg-gray-50'>
-        <Image src={product.thumbnail} alt={product.title} fill className='object-cover object-center' />
+        <Image
+          src={product.thumbnail}
+          alt={product.title}
+          fill
+          className='object-cover object-center'
+        />
       </div>
 
       {/* Ürün Detayları */}

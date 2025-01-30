@@ -4,7 +4,7 @@ Bu proje, bir e-ticaret case'i için Next.js 14 kullanılarak geliştirilmiş ö
 
 ## Kullanılan Teknolojiler
 
-- Next.js 14
+- Next.js 15
 - TypeScript
 - Tailwind CSS
 - Context API

@@ -1,11 +1,8 @@
-// src/components/products/ProductCard.tsx
 'use client'
 
 import React from 'react'
-
-import { Star, ShoppingCart, Plus, Minus } from 'lucide-react'
 import Image from 'next/image'
-
+import { Star, ShoppingCart, Plus, Minus } from 'lucide-react'
 import { useCart } from '@/contexts/CartContext'
 import type { Product } from '@/types'
 
@@ -26,15 +23,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
   }
 
   const handleUpdateQuantity = (newQuantity: number) => {
-    if (newQuantity > currentStock) {
-      alert('Stok limitine ulaşıldı!')
-      return
-    }
     updateQuantity(id, newQuantity)
   }
 
   return (
-    <div className='group bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100'>
+    <div className='group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-orange-50 hover:border-orange-100 hover:bg-orange-50/20 hover:-translate-y-1'>
       {/* Fotoğraf Alanı */}
       <div className='relative aspect-square'>
         {thumbnail && (
@@ -48,13 +41,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
         )}
 
         {/* Stok Badge'i */}
-        {stock < 5 && stock > 0 && (
+        {currentStock <= 2 && currentStock > 0 && (
           <div className='absolute top-3 left-3 flex items-center gap-1 bg-red-500 text-white px-2 py-1 rounded-full text-xs'>
-            <span>Son {stock} ürün</span>
+            <span>Son {currentStock} ürün</span>
           </div>
         )}
-
-        {/* İndirim Badge'i KALDIRILDI */}
       </div>
 
       {/* Ürün Bilgileri */}
@@ -68,9 +59,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                 <Star
                   key={i}
                   className={`w-4 h-4 ${
-                    i < Math.floor(rating)
-                      ? 'fill-yellow-400 text-yellow-400'
-                      : 'fill-gray-200 text-gray-200'
+                    i < Math.floor(rating) ? 'fill-yellow-400 text-yellow-400' : 'fill-gray-200 text-gray-200'
                   }`}
                 />
               ))}
@@ -93,9 +82,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
                     }).format(price * (1 - discountPercentage / 100))}
                   </span>
                 </div>
-                <span className='text-xs text-green-600 mt-1'>
-                  %{Math.round(discountPercentage)} indirim
-                </span>
+                <span className='text-xs text-green-600 mt-1'>%{Math.round(discountPercentage)} indirim</span>
               </>
             ) : (
               <span className='text-xl font-bold text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis'>
@@ -113,19 +100,19 @@ const ProductCard = ({ product }: ProductCardProps) => {
               onClick={handleAddToCart}
               disabled={stock === 0}
               className={`w-full sm:w-auto h-10 px-4 rounded-full flex items-center justify-center gap-2 
-                ${stock > 0 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-100'} 
+                ${stock > 0 ? 'bg-orange-500 hover:bg-orange-600' : 'bg-gray-100'} 
                 transition-all flex-shrink-0`}
             >
               <ShoppingCart className='w-4 h-4' />
-              <span className='text-sm font-medium text-current'>
-                {stock === 0 ? 'Stokta Yok' : 'Sepete Ekle'}
-              </span>
+              <span className='text-sm font-medium text-current'>{stock === 0 ? 'Stokta Yok' : 'Sepete Ekle'}</span>
             </button>
           ) : (
-            <div className='flex items-center gap-1 bg-blue-600 rounded-full p-1 w-full sm:w-auto justify-between flex-shrink-0'>
+            <div
+              className={`flex items-center gap-1 ${currentStock === 0 ? 'bg-gray-400' : 'bg-orange-500'} rounded-full p-1 w-full sm:w-auto justify-between flex-shrink-0`}
+            >
               <button
                 onClick={() => handleUpdateQuantity(quantityInCart - 1)}
-                className='w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors'
+                className='w-8 h-8 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors'
               >
                 <Minus className='w-4 h-4 text-white' />
               </button>
@@ -133,7 +120,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               <button
                 onClick={() => handleUpdateQuantity(quantityInCart + 1)}
                 disabled={currentStock === 0}
-                className='w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:hover:bg-transparent'
+                className='w-8 h-8 rounded-full flex items-center justify-center hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:hover:bg-transparent'
               >
                 <Plus className='w-4 h-4 text-white' />
               </button>

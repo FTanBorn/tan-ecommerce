@@ -2,17 +2,14 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-
-import { ArrowUpDown, LayoutGrid, Package, Star, Wallet, ChevronDown, FilterX } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { ArrowUpDown, LayoutGrid, Package, Star, Wallet, ChevronDown, FilterX } from 'lucide-react'
 
-// Kategori arayüzü
 interface Category {
   slug: string
   name: string
 }
 
-// Sıralama seçenekleri
 const SORT_OPTIONS = [
   { value: '', label: 'Sıralama' },
   { value: 'price-asc', label: 'Fiyat: Düşükten Yükseğe' },
@@ -23,7 +20,7 @@ const SORT_OPTIONS = [
 ]
 
 interface FiltersProps {
-  categories: Category[] // Server tarafından gelecek data cacheden alınacak
+  categories: Category[]
   className?: string
 }
 
@@ -33,7 +30,6 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
   const [openSection, setOpenSection] = useState<string | null>(null)
   const [isClient, setIsClient] = useState(false)
 
-  // Durumlar
   const [minPrice, setMinPrice] = useState(searchParams.get('minPrice') || '')
   const [maxPrice, setMaxPrice] = useState(searchParams.get('maxPrice') || '')
   const [minRating, setMinRating] = useState(searchParams.get('minRating') || '')
@@ -41,10 +37,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
   const currentCategory = searchParams.get('category') || ''
   const inStock = searchParams.get('inStock') === 'true'
 
-  // Aktif filtre kontrolü
-  const hasActiveFilters = Boolean(
-    currentSort || currentCategory || inStock || minRating || minPrice || maxPrice
-  )
+  const hasActiveFilters = Boolean(currentSort || currentCategory || inStock || minRating || minPrice || maxPrice)
 
   useEffect(() => {
     setIsClient(true)
@@ -81,19 +74,17 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
   }
 
   return (
-    <div
-      className={`bg-white rounded-xl shadow-lg p-4 lg:p-6 space-y-6 border border-gray-100 ${className}`}
-    >
+    <div className={`bg-white rounded-xl shadow-lg p-4 lg:p-6 space-y-6 border border-gray-100 ${className}`}>
       {/* Başlık ve Temizleme */}
       <div className='flex items-center justify-between'>
         <h2 className='text-lg font-semibold text-gray-900 flex items-center gap-2'>
-          <FilterX className='w-5 h-5 text-blue-600' />
+          <FilterX className='w-5 h-5 text-orange-500' />
           Filtreler
         </h2>
         {hasActiveFilters && (
           <button
             onClick={clearAllFilters}
-            className='text-sm text-blue-600 hover:text-blue-700 flex items-center gap-1'
+            className='text-sm text-orange-500 hover:text-orange-600 flex items-center gap-1'
           >
             Temizle
             <FilterX className='w-4 h-4' />
@@ -108,7 +99,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           className='flex items-center justify-between w-full py-2 lg:cursor-default'
         >
           <div className='flex items-center gap-2 text-gray-700'>
-            <ArrowUpDown className='w-5 h-5 text-blue-600' />
+            <ArrowUpDown className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>Sırala</span>
           </div>
           <ChevronDown
@@ -119,7 +110,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           <select
             value={currentSort}
             onChange={e => updateUrl({ sort: e.target.value || null })}
-            className='w-full px-4 py-3 text-black text-sm bg-white border-2 border-gray-200 rounded-xl cursor-pointer transition-all hover:border-blue-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-200'
+            className='w-full px-4 py-3 text-black text-sm bg-white border-2 border-gray-200 rounded-xl cursor-pointer transition-all hover:border-orange-200 focus:border-orange-500 focus:ring-1 focus:ring-orange-200'
           >
             {SORT_OPTIONS.map(option => (
               <option key={option.value} value={option.value}>
@@ -137,7 +128,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           className='flex items-center justify-between w-full py-2 lg:cursor-default'
         >
           <div className='flex items-center gap-2 text-gray-700'>
-            <LayoutGrid className='w-5 h-5 text-blue-600' />
+            <LayoutGrid className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>Kategoriler</span>
           </div>
           <ChevronDown
@@ -148,9 +139,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           <button
             onClick={() => updateUrl({ category: '' })}
             className={`w-full p-2 text-sm rounded-lg transition-colors ${
-              !currentCategory
-                ? 'bg-blue-600 text-white font-medium'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              !currentCategory ? 'bg-orange-500 text-white font-medium' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >
             Tüm Kategoriler
@@ -162,7 +151,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
                 onClick={() => updateUrl({ category: category.slug })}
                 className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-colors ${
                   currentCategory === category.slug
-                    ? 'bg-blue-50 text-blue-600 font-medium'
+                    ? 'bg-orange-50 text-orange-500 font-medium'
                     : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
@@ -180,7 +169,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           className='flex items-center justify-between w-full py-2 lg:cursor-default'
         >
           <div className='flex items-center gap-2 text-gray-700'>
-            <Package className='w-5 h-5 text-blue-600' />
+            <Package className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>Stok Durumu</span>
           </div>
           <ChevronDown
@@ -197,7 +186,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
                 onChange={() => updateUrl({ inStock: (!inStock).toString() })}
                 className='sr-only peer'
               />
-              <div className='w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-500 transition-colors' />
+              <div className='w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-orange-500 transition-colors' />
               <div className='absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5' />
             </div>
           </label>
@@ -211,7 +200,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           className='flex items-center justify-between w-full py-2 lg:cursor-default'
         >
           <div className='flex items-center gap-2 text-gray-700'>
-            <Star className='w-5 h-5 text-blue-600' />
+            <Star className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>Minimum Puan</span>
           </div>
           <ChevronDown
@@ -234,13 +223,11 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
                 }}
                 className={`flex items-center gap-1 px-2 py-2 rounded-lg text-sm transition-all ${
                   Number(minRating) === rating
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-orange-500 text-white'
                     : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                 }`}
               >
-                <Star
-                  className={`w-4 h-4 ${Number(minRating) === rating ? 'fill-white' : 'fill-gray-300'}`}
-                />
+                <Star className={`w-4 h-4 ${Number(minRating) === rating ? 'fill-white' : 'fill-gray-300'}`} />
                 {rating}+
               </button>
             ))}
@@ -255,7 +242,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
           className='flex items-center justify-between w-full py-2 lg:cursor-default'
         >
           <div className='flex items-center gap-2 text-gray-700'>
-            <Wallet className='w-5 h-5 text-blue-600' />
+            <Wallet className='w-5 h-5 text-orange-500' />
             <span className='font-medium'>Fiyat Aralığı</span>
           </div>
           <ChevronDown
@@ -269,14 +256,14 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
               value={minPrice}
               onChange={e => setMinPrice(e.target.value)}
               placeholder='En az'
-              className='flex-1 p-2 w-full border text-black border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500'
+              className='flex-1 p-2 w-full border text-black border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-500'
             />
             <input
               type='number'
               value={maxPrice}
               onChange={e => setMaxPrice(e.target.value)}
               placeholder='En çok'
-              className='flex-1 p-2 w-full border text-black border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-blue-500'
+              className='flex-1 p-2 w-full border text-black border-gray-200 rounded-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-500'
             />
           </div>
           <button
@@ -286,7 +273,7 @@ const Filters = ({ className = '', categories }: FiltersProps) => {
                 maxPrice: maxPrice || null
               })
             }
-            className='w-full mt-3 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors'
+            className='w-full mt-3 px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white text-sm rounded-lg transition-colors'
           >
             Fiyatı Uygula
           </button>

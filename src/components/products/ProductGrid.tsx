@@ -6,10 +6,9 @@ import React, { useEffect, useState, useCallback } from 'react'
 import { Loader2 } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import { useInView } from 'react-intersection-observer'
+import ProductCard from './ProductCard'
 
 import type { Product } from '@/types'
-
-import ProductCard from './ProductCard'
 
 const LIMIT = 12
 
@@ -105,9 +104,7 @@ const ProductGrid = () => {
     <div>
       {/* Toplam Ürün Sayısı Başlığı */}
       <div className='flex justify-between items-center mb-6'>
-        <h2 className='text-xl font-semibold text-gray-800'>
-          {search ? `"${search}" için sonuçlar` : 'Tüm Ürünler'}
-        </h2>
+        <h2 className='text-xl font-semibold text-gray-800'>{search ? `"${search}" için sonuçlar` : 'Tüm Ürünler'}</h2>
         <span className='text-sm text-gray-500'>{total} ürün bulundu</span>
       </div>
 

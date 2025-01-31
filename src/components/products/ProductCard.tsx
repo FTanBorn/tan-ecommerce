@@ -27,7 +27,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
   }
 
   return (
-    <div className='group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-orange-50 hover:border-orange-100 hover:bg-orange-50/20 hover:-translate-y-1'>
+    <div className='group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200'>
+      {/* Üst Etiketler */}
+      <div className='absolute top-2 left-2 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-medium'>
+        En Çok Satan
+      </div>
+
       {/* Fotoğraf Alanı */}
       <div className='relative aspect-square'>
         {thumbnail && (
@@ -38,6 +43,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
             className='object-cover group-hover:scale-105 transition-transform duration-300'
             loading='lazy'
           />
+        )}
+
+        {/* İndirim Yüzdesi Badge'i */}
+        {discountPercentage > 0 && (
+          <div className='absolute top-3 right-3 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-md'>
+            %{Math.round(discountPercentage)} İndirim
+          </div>
         )}
 
         {/* Stok Badge'i */}
@@ -52,7 +64,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <div className='p-4 space-y-3'>
         {/* Başlık ve Rating kısmı */}
         <div>
-          <h3 className='font-medium text-gray-800 line-clamp-2 min-h-[2.5rem]'>{title}</h3>
+          <h3 className='font-medium text-gray-800 overflow-hidden text-ellipsis whitespace-nowrap'>
+            {title}
+          </h3>
           <div className='flex items-center gap-1 mt-1'>
             <div className='flex'>
               {[...Array(5)].map((_, i) => (
@@ -70,42 +84,33 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         </div>
 
-        {/* Fiyat ve Sepet Butonu için */}
-        <div className='flex flex-col sm:flex-row items-end justify-between pt-2 gap-2'>
-          {/* Fiyat Alanı */}
-          <div className='flex-1 min-w-0'>
-            {discountPercentage > 0 ? (
-              <>
-                <div className='flex items-baseline gap-2'>
-                  <span className='text-xl font-bold text-green-600 whitespace-nowrap overflow-hidden text-ellipsis'>
-                    {new Intl.NumberFormat('tr-TR', {
-                      style: 'currency',
-                      currency: 'TRY'
-                    }).format(price * (1 - discountPercentage / 100))}
-                  </span>
-                </div>
-                <span className='text-xs text-green-600 mt-1'>
-                  %{Math.round(discountPercentage)} indirim
-                </span>
-              </>
-            ) : (
-              <span className='text-xl font-bold text-gray-900 whitespace-nowrap overflow-hidden text-ellipsis'>
-                {new Intl.NumberFormat('tr-TR', {
-                  style: 'currency',
-                  currency: 'TRY'
-                }).format(price)}
-              </span>
-            )}
-          </div>
+        {/* Fiyat Alanı */}
+        <div className='flex items-baseline gap-2 '>
+          {discountPercentage > 0 && (
+            <span className='text-xs md:text-sm font-medium text-gray-400 line-through'>
+              {new Intl.NumberFormat('tr-TR', {
+                style: 'currency',
+                currency: 'TRY'
+              }).format(price / (1 - discountPercentage / 100))}
+            </span>
+          )}
+          <span className='text-sm md:text-lg font-bold text-gray-900'>
+            {new Intl.NumberFormat('tr-TR', {
+              style: 'currency',
+              currency: 'TRY'
+            }).format(price)}
+          </span>
+        </div>
 
-          {/* Sepet Butonu veya Miktar Kontrolü */}
+        {/* Sepet Butonu veya Miktar Kontrolü */}
+        <div className='flex items-center gap-2'>
           {quantityInCart === 0 ? (
             <button
               onClick={handleAddToCart}
               disabled={stock === 0}
-              className={`w-full sm:w-auto h-10 px-4 rounded-full flex items-center justify-center gap-2 
+              className={`w-full h-10 px-4 rounded-full flex items-center justify-center gap-2 
                 ${stock > 0 ? 'bg-orange-500 hover:bg-orange-600' : 'bg-gray-100'} 
-                transition-all flex-shrink-0`}
+                transition-all`}
             >
               <ShoppingCart className='w-4 h-4' />
               <span className='text-sm font-medium text-current'>
@@ -114,7 +119,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             </button>
           ) : (
             <div
-              className={`flex items-center gap-1 ${currentStock === 0 ? 'bg-gray-400' : 'bg-orange-500'} rounded-full p-1 w-full sm:w-auto justify-between flex-shrink-0`}
+              className={`flex items-center gap-1 bg-orange-500 rounded-full p-1 w-full justify-between`}
             >
               <button
                 onClick={() => handleUpdateQuantity(quantityInCart - 1)}

@@ -101,26 +101,23 @@ const ProductGrid = () => {
   }
 
   return (
-    <div>
-      {/* Toplam Ürün Sayısı Başlığı */}
-      <div className='flex justify-between items-center mb-6'>
-        <h2 className='text-xl font-semibold text-gray-800'>
-          {search ? `"${search}" için sonuçlar` : 'Tüm Ürünler'}
+    <div className='container mx-auto px-2 md:px-4'>
+      <div className='flex justify-between items-center mb-4 md:mb-6'>
+        <h2 className='text-lg md:text-xl font-semibold text-gray-800'>
+          {search ? `"${search}" sonuçları` : 'Tüm Ürünler'}
         </h2>
-        <span className='text-sm text-gray-500'>{total} ürün bulundu</span>
+        <span className='text-xs md:text-sm text-gray-500'>{total} ürün</span>
       </div>
 
-      {/* Ürün Listesi */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols gap-3 md:gap-4'>
         {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
-      {/* Daha Fazla Yükleme Butonu */}
       {products.length < total && (
-        <div ref={ref} className='flex justify-center mt-8'>
-          {isLoading && <Loader2 className='w-8 h-8 animate-spin text-orange-500' />}
+        <div ref={ref} className='flex justify-center mt-6'>
+          {isLoading && <Loader2 className='w-6 h-6 md:w-8 md:h-8 animate-spin text-orange-500' />}
         </div>
       )}
     </div>

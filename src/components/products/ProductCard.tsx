@@ -131,7 +131,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               <button
                 onClick={() => handleUpdateQuantity(quantityInCart + 1)}
                 disabled={currentStock === 0}
-                className='w-8 h-8 rounded-full flex items-center justify-center hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:hover:bg-transparent'
+                className='w-8 h-8 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors disabled:opacity-50 disabled:hover:bg-transparent'
               >
                 <Plus className='w-4 h-4 text-white' />
               </button>

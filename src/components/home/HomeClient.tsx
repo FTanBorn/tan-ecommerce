@@ -2,7 +2,6 @@
 'use client'
 
 import { Fragment, useState } from 'react'
-
 import { Dialog, Transition } from '@headlessui/react'
 import { SlidersHorizontal, X } from 'lucide-react'
 
@@ -11,24 +10,21 @@ import SearchBar from '@/components/filters/SearchBar'
 import ProductGrid from '@/components/products/ProductGrid'
 import type { Category } from '@/types'
 
-// Client-side bileşen wrapper'ı
 function HomeClient({ categories }: { categories: Category[] }) {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
 
   return (
     <div className='min-h-screen bg-gray-50'>
-      {/* Ana Container */}
       <div className='container mx-auto px-4'>
-        {/* İki Sütunlu Layout */}
         <div className='flex flex-col lg:flex-row gap-8'>
-          {/* Sol Sidebar - Filtreler (Desktop) */}
+          {/* Desktop Filters Sidebar */}
           <aside className='hidden lg:block w-80 shrink-0'>
             <div className='top-24 space-y-6'>
               <Filters categories={categories} />
             </div>
           </aside>
 
-          {/* Filter Drawer (Mobile) */}
+          {/* Mobile Filter Drawer */}
           <Transition.Root show={isFilterOpen} as={Fragment}>
             <Dialog as='div' className='relative z-50 lg:hidden' onClose={setIsFilterOpen}>
               <Transition.Child
@@ -82,23 +78,20 @@ function HomeClient({ categories }: { categories: Category[] }) {
           </Transition.Root>
 
           <main className='flex-1'>
-            {/* Başlık ve Arama */}
-            <div className='space-y-0 mb-8'>
-              <div className='flex items-center justify-between'>
-                {/* Mobil Filter Butonu */}
-                <button
-                  onClick={() => setIsFilterOpen(true)}
-                  className='lg:hidden flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700
-                           bg-white border border-gray-300 rounded-lg hover:bg-gray-50'
-                >
-                  <SlidersHorizontal className='w-4 h-4' />
-                  Filtreler
-                </button>
+            <div className='mb-8 flex items-center gap-2 lg:gap-0'>
+              <button
+                onClick={() => setIsFilterOpen(true)}
+                className='lg:hidden p-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-orange-200'
+              >
+                <SlidersHorizontal className='w- h-8 text-gray-700' />
+              </button>
+
+              <div className='flex-1'>
+                <SearchBar />
               </div>
-              <SearchBar />
             </div>
 
-            {/* Ürün Grid */}
             <ProductGrid />
           </main>
         </div>

@@ -7,7 +7,7 @@ import Link from 'next/link'
 const HeaderLogo = memo(function HeaderLogo() {
   return (
     <Link href='/' className='flex items-center gap-2'>
-      <span className='text-2xl font-bold text-orange-600'>Yetiş Çarşı</span>
+      <span className='text-2xl font-bold text-orange-600'>Yetişmeyen Çarşı</span>
     </Link>
   )
 })
